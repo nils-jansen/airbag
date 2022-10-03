@@ -13,6 +13,7 @@ export abstract class HttpError extends Error {
 export class BadRequestError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Bad Request", Status.BadRequest, options);
+    this.name = BadRequestError.name;
   }
 }
 
@@ -20,6 +21,7 @@ export class BadRequestError extends HttpError {
 export class UnauthorizedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Unauthorized", Status.Unauthorized, options);
+    this.name = UnauthorizedError.name;
   }
 }
 
@@ -27,6 +29,7 @@ export class UnauthorizedError extends HttpError {
 export class PaymentRequiredError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Payment Required", Status.PaymentRequired, options);
+    this.name = PaymentRequiredError.name;
   }
 }
 
@@ -34,6 +37,7 @@ export class PaymentRequiredError extends HttpError {
 export class ForbiddenError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Forbidden", Status.Forbidden, options);
+    this.name = ForbiddenError.name;
   }
 }
 
@@ -41,6 +45,7 @@ export class ForbiddenError extends HttpError {
 export class NotFoundError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Not Found", Status.NotFound, options);
+    this.name = NotFoundError.name;
   }
 }
 
@@ -48,6 +53,7 @@ export class NotFoundError extends HttpError {
 export class MethodNotAllowedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Method Not Allowed", Status.MethodNotAllowed, options);
+    this.name = MethodNotAllowedError.name;
   }
 }
 
@@ -55,6 +61,7 @@ export class MethodNotAllowedError extends HttpError {
 export class NotAcceptableError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Not Acceptable", Status.NotAcceptable, options);
+    this.name = NotAcceptableError.name;
   }
 }
 
@@ -66,6 +73,7 @@ export class ProxyAuthenticationRequiredError extends HttpError {
       Status.ProxyAuthRequired,
       options
     );
+    this.name = ProxyAuthenticationRequiredError.name;
   }
 }
 
@@ -73,6 +81,7 @@ export class ProxyAuthenticationRequiredError extends HttpError {
 export class RequestTimeoutError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Request Timeout", Status.RequestTimeout, options);
+    this.name = RequestTimeoutError.name;
   }
 }
 
@@ -80,6 +89,7 @@ export class RequestTimeoutError extends HttpError {
 export class ConflictError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Conflict", Status.Conflict, options);
+    this.name = ConflictError.name;
   }
 }
 
@@ -87,6 +97,7 @@ export class ConflictError extends HttpError {
 export class GoneError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Gone", Status.Gone, options);
+    this.name = GoneError.name;
   }
 }
 
@@ -94,6 +105,7 @@ export class GoneError extends HttpError {
 export class LengthRequiredError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Length Required", Status.LengthRequired, options);
+    this.name = LengthRequiredError.name;
   }
 }
 
@@ -101,6 +113,7 @@ export class LengthRequiredError extends HttpError {
 export class PreconditionFailedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Precondition Failed", Status.PreconditionFailed, options);
+    this.name = PreconditionFailedError.name;
   }
 }
 
@@ -112,6 +125,7 @@ export class PayloadTooLargeError extends HttpError {
       Status.RequestEntityTooLarge,
       options
     );
+    this.name = PayloadTooLargeError.name;
   }
 }
 
@@ -119,6 +133,7 @@ export class PayloadTooLargeError extends HttpError {
 export class URITooLongError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "URI Too Long", Status.RequestURITooLong, options);
+    this.name = URITooLongError.name;
   }
 }
 
@@ -130,6 +145,7 @@ export class UnsupportedMediaTypeError extends HttpError {
       Status.UnsupportedMediaType,
       options
     );
+    this.name = UnsupportedMediaTypeError.name;
   }
 }
 
@@ -141,6 +157,7 @@ export class RangeNotSatisfiableError extends HttpError {
       Status.RequestedRangeNotSatisfiable,
       options
     );
+    this.name = RangeNotSatisfiableError.name;
   }
 }
 
@@ -148,6 +165,7 @@ export class RangeNotSatisfiableError extends HttpError {
 export class ExpectationFailedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Expectation Failed", Status.ExpectationFailed, options);
+    this.name = ExpectationFailedError.name;
   }
 }
 
@@ -155,6 +173,7 @@ export class ExpectationFailedError extends HttpError {
 export class ImATeapotError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "I'm a teapot", Status.Teapot, options);
+    this.name = ImATeapotError.name;
   }
 }
 
@@ -162,6 +181,7 @@ export class ImATeapotError extends HttpError {
 export class MisdirectedRequestError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Misdirected Request", Status.MisdirectedRequest, options);
+    this.name = MisdirectedRequestError.name;
   }
 }
 
@@ -173,6 +193,7 @@ export class UnprocessableEntityError extends HttpError {
       Status.UnprocessableEntity,
       options
     );
+    this.name = UnprocessableEntityError.name;
   }
 }
 
@@ -180,6 +201,7 @@ export class UnprocessableEntityError extends HttpError {
 export class LockedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Locked", Status.Locked, options);
+    this.name = LockedError.name;
   }
 }
 
@@ -187,6 +209,7 @@ export class LockedError extends HttpError {
 export class FailedDependencyError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Failed Dependency", Status.FailedDependency, options);
+    this.name = FailedDependencyError.name;
   }
 }
 
@@ -194,6 +217,7 @@ export class FailedDependencyError extends HttpError {
 export class TooEarlyError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Too Early", Status.TooEarly, options);
+    this.name = TooEarlyError.name;
   }
 }
 
@@ -201,6 +225,7 @@ export class TooEarlyError extends HttpError {
 export class UpgradeRequiredError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Upgrade Required", Status.UpgradeRequired, options);
+    this.name = UpgradeRequiredError.name;
   }
 }
 
@@ -212,6 +237,7 @@ export class PreconditionRequiredError extends HttpError {
       Status.PreconditionRequired,
       options
     );
+    this.name = PreconditionRequiredError.name;
   }
 }
 
@@ -219,6 +245,7 @@ export class PreconditionRequiredError extends HttpError {
 export class TooManyRequestsError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Too Many Requests", Status.TooManyRequests, options);
+    this.name = TooManyRequestsError.name;
   }
 }
 
@@ -230,6 +257,7 @@ export class RequestHeaderFieldsTooLargeError extends HttpError {
       Status.RequestHeaderFieldsTooLarge,
       options
     );
+    this.name = RequestHeaderFieldsTooLargeError.name;
   }
 }
 
@@ -241,6 +269,7 @@ export class UnavailableForLegalReasonsError extends HttpError {
       Status.UnavailableForLegalReasons,
       options
     );
+    this.name = UnavailableForLegalReasonsError.name;
   }
 }
 
@@ -252,6 +281,7 @@ export class InternalServerError extends HttpError {
       Status.InternalServerError,
       options
     );
+    this.name = InternalServerError.name;
   }
 }
 
@@ -259,6 +289,7 @@ export class InternalServerError extends HttpError {
 export class NotImplementedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Not Implemented", Status.NotImplemented, options);
+    this.name = NotImplementedError.name;
   }
 }
 
@@ -266,6 +297,7 @@ export class NotImplementedError extends HttpError {
 export class BadGatewayError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Bad Gateway", Status.BadGateway, options);
+    this.name = BadGatewayError.name;
   }
 }
 
@@ -273,6 +305,7 @@ export class BadGatewayError extends HttpError {
 export class ServiceUnavailableError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Service Unavailable", Status.ServiceUnavailable, options);
+    this.name = ServiceUnavailableError.name;
   }
 }
 
@@ -280,6 +313,7 @@ export class ServiceUnavailableError extends HttpError {
 export class GatewayTimeoutError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Gateway Timeout", Status.GatewayTimeout, options);
+    this.name = GatewayTimeoutError.name;
   }
 }
 
@@ -291,6 +325,7 @@ export class HTTPVersionNotSupportedError extends HttpError {
       Status.HTTPVersionNotSupported,
       options
     );
+    this.name = HTTPVersionNotSupportedError.name;
   }
 }
 
@@ -302,6 +337,7 @@ export class VariantAlsoNegotiatesError extends HttpError {
       Status.VariantAlsoNegotiates,
       options
     );
+    this.name = VariantAlsoNegotiatesError.name;
   }
 }
 
@@ -313,6 +349,7 @@ export class InsufficientStorageError extends HttpError {
       Status.InsufficientStorage,
       options
     );
+    this.name = InsufficientStorageError.name;
   }
 }
 
@@ -320,6 +357,7 @@ export class InsufficientStorageError extends HttpError {
 export class LoopDetectedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Loop Detected", Status.LoopDetected, options);
+    this.name = LoopDetectedError.name;
   }
 }
 
@@ -327,6 +365,7 @@ export class LoopDetectedError extends HttpError {
 export class NotExtendedError extends HttpError {
   constructor(message?: string, options?: ErrorOptions) {
     super(message || "Not Extended", Status.NotExtended, options);
+    this.name = NotExtendedError.name;
   }
 }
 
@@ -338,5 +377,6 @@ export class NetworkAuthenticationRequiredError extends HttpError {
       Status.NetworkAuthenticationRequired,
       options
     );
+    this.name = NetworkAuthenticationRequiredError.name;
   }
 }
