@@ -1,10 +1,10 @@
 # Airbag
-A simple solution to error handling in oak
+A simple solution to error handling in [oak](https://github.com/oakserver/oak)
 
 ## Usage
 ```ts
-import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
-import { Airbag, BadRequestError } from "https://deno.land/x/airbag@0.2/mod.ts";
+import { Application, Router } from "https://deno.land/x/oak/mod.ts";
+import { Airbag, BadRequestError } from "https://deno.land/x/airbag@0.4/mod.ts";
 
 const app = new Application();
 const router = new Router();
@@ -17,11 +17,12 @@ const airbag = Airbag(loggingFn);
 app.use(airbag);
 
 // Throw an Airbag HTTP Error from anywhere inside a route
-router.get("/", async (ctx) => {
-  if(!ctx.params["domain"]){
+router.get("/:domain", async (ctx) => {
+  const domain = ctx.params["domain"];
+  if(!domain){
     throw new BadRequestError("Domain is required");
   }
-  return { some: "data" };
+  return { domain };
 });
 
 app.use(router.routes());
